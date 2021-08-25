@@ -1,4 +1,4 @@
-const port = 3004
+const port = process.env.PORT || 3004
 import db from './config/knex.js'
 import cors from 'cors' 
 import express from 'express'
@@ -21,7 +21,7 @@ app.get('/auth',(req,res)=>{
                        .catch(err => res.status(400).json(err))
 
 })
-app.listen(process.env.PORT || port,()=>{
+app.listen(port,()=>{
     let msg :string = `online into port :${port}, ${db}`
     console.log(msg)
    
