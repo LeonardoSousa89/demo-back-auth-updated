@@ -24,6 +24,5 @@ app.get('/auth',(req,res)=>{
 app.listen(port,()=>{
     let msg :string = `online into port :${port}, ${db}`
     console.log(msg)
-   
 })
 
