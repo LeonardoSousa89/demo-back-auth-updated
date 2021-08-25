@@ -21,7 +21,7 @@ app.get('/auth',(req,res)=>{
                        .catch(err => res.status(400).json(err))
 
 })
-app.listen(port,()=>{
+app.listen(process.env.PORT || port,()=>{
     let msg :string = `online into port :${port}, ${db}`
     console.log(msg)
    
