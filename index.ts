@@ -1,5 +1,6 @@
 const port = process.env.PORT || 3004
 import db from './config/knex.js'
+import dbDev from './config/developmentDataBase.js'
 import cors from 'cors' 
 import express from 'express'
 const app = express()
@@ -16,7 +17,7 @@ app.get('/auth',(req,res)=>{
         password :string;
     }
 
-    db<User>('auth').select('*')
+    dbDev<User>('auth').select('*')
                        .then(e    => res.status(200).json(e))
                        .catch(err => res.status(400).json(err))
 
